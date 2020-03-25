@@ -1,0 +1,30 @@
+<div class="container" style="margin:1cm;">
+	<form [formGroup]="bookEditFormGroup">
+			<div class="form-group">
+				<input type="text" class="form-control" formControlName="bookTitle" placeholder="book title" required>
+				<small class="form-text text-danger" *ngIf="bookEditFormGroup.controls.bookTitle.invalid && bookEditFormGroup.controls.bookTitle.touched" >this feild is require</small>
+			</div>
+			<div class="form-group">
+				<input type="text" class="form-control" formControlName="edition" placeholder="enter emailid" required>
+				<small class="form-text text-danger" *ngIf="bookEditFormGroup.controls.edition.invalid && bookEditFormGroup.controls.edition.touched" >edition is invalid</small>
+			</div>
+			<div class="form-group">
+				<input type="text" class="form-control" formControlName="author" placeholder="enter author" required>
+				<small class="form-text text-danger" *ngIf="bookEditFormGroup.controls.author.invalid && bookEditFormGroup.controls.author.touched" >author is invalid</small>
+			</div>
+			<div class="form-group">
+				<input type="number" class="form-control" formControlName="price" placeholder="enter price " required>
+				<small class="form-text text-danger" *ngIf="bookEditFormGroup.controls.price.invalid && bookEditFormGroup.controls.price.touched" >price is invalid</small>
+			</div>
+			<div class="form-group">
+				<input type="text" class="form-control" formControlName="publisher" placeholder="publisher name" required>
+				<small class="form-text text-danger" *ngIf="bookEditFormGroup.controls.publisher.invalid && bookEditFormGroup.controls.publisher.touched" >publisher name is invalid</small>
+			</div>
+			<div class="form-group">
+				<input type="number" class="form-control" formControlName="bookCount" placeholder="bookCount" required>
+				<small class="form-text text-danger" *ngIf="bookEditFormGroup.controls.bookCount.invalid && bookEditFormGroup.controls.bookCount.touched" >bookCount is invalid</small>
+			</div>
+			<button class="btn btn-primary btn-block"[disabled]="!bookEditFormGroup.valid"  (click)="editBook()">Update Book</button>
+			<button class="btn btn-primary btn-block"routerLink="">Back to List</button>
+		</form>
+</div>
